@@ -40,4 +40,13 @@ public class Cart {
 
 	}
 
+	public void showItems() {
+		//demonstrates how to talk to all items in the collection
+		for (Item anItem : items) {
+			System.out.println("Item name: " + anItem.getName() + " Quantity: " + anItem.getQuantity() + " Price: "
+					+ anItem.getPrice());
+			System.out.println("");
+		}
+	}
+
 }
