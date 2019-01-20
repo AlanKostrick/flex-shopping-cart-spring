@@ -18,6 +18,8 @@
 
 ## How to clone:
 - git clone https://github.com/AlanKostrick/flex-shopping-cart-spring.git
+- don't forget to run `gradle eclipse` in the directory afterwards
+- them import project into Eclipse
 
 
 ## Stretch goals
