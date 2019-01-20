@@ -8,8 +8,8 @@ import org.junit.Test;
 public class CartTest {
 
 	Cart underTest = new Cart();
-	Item shirt = new Item("shirt", 2, 10);
-	Item sunglasses = new Item("sunglasses", 1, 25);
+	Item shirt = new Item(1,"shirt", 2, 10);
+	Item sunglasses = new Item(2,"sunglasses", 1, 25);
 
 	@Test
 	public void shouldIncreaseSizeOfCartFrom0To1UponAddingAnItem() {
@@ -46,7 +46,7 @@ public class CartTest {
 	public void shouldDecreaseSizeFrom2DownTo1UponRemoval() {
 		underTest.add(shirt);
 		underTest.add(sunglasses);
-		underTest.remove("sunglasses");
+		underTest.remove(2);
 		int cartSize = underTest.getSize();
 		assertThat(cartSize, is(1));
 	}

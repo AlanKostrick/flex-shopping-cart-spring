@@ -1,23 +1,23 @@
 package shopping.cart;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Cart {
 
-	private List<Item> items = new ArrayList<>();
+	private Map<Integer, Item> items = new HashMap<>();
 
 	public void add(Item anItem) {
-		items.add(anItem);
+		items.put(anItem.getItemId(), anItem);
 	}
-
+ 
 	public int getSize() {
 		return items.size();
 	}
 
 	public int getTotalQuantity() {
 		int total = 0;
-		for (Item anItem : items) {
+		for (Item anItem : items.values()) {
 			total += anItem.getQuantity();
 		}
 		return total;
@@ -25,24 +25,19 @@ public class Cart {
 
 	public int getTotalPrice() {
 		int total = 0;
-		for (Item anItem : items) {
+		for (Item anItem : items.values()) {
 			total += anItem.getPrice() * anItem.getQuantity();
 		}
 		return total;
 	}
 
-	public void remove(String itemName) {
-		for (int i = items.size() - 1; i > 0; i--) {
-			if (items.get(i).getName().equals(itemName)) {
-				items.remove(i);
-			}
-		}
-
+	public void remove(Integer itemId) {
+		items.remove(itemId);
 	}
 
 	public void showItems() {
 		//demonstrates how to talk to all items in the collection
-		for (Item anItem : items) {
+		for (Item anItem : items.values()) {
 			System.out.println("Item name: " + anItem.getName() + " Quantity: " + anItem.getQuantity() + " Price: "
 					+ anItem.getPrice());
 			System.out.println("");
