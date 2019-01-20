@@ -17,6 +17,8 @@
 - Be able to calculate total purchase price
 
 ## How to clone:
+- git clone https://github.com/AlanKostrick/flex-shopping-cart-spring.git
+
 
 ## Stretch goals
 - change quantity of an item that you want to purchase
